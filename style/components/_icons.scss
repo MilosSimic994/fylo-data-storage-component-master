@@ -6,6 +6,12 @@
   justify-content: center;
   padding: 3rem;
 
+  @include medium {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
   .item-icons {
     height: 13rem;
     width: 23rem;
@@ -13,6 +19,12 @@
     border-radius: 5% 40% 5% 5%;
     padding: 3rem;
     margin: 3rem;
+
+    @include medium {
+      flex-direction: column;
+      width: 70%;
+      margin: 0;
+    }
 
     .icon-container {
       display: flex;
