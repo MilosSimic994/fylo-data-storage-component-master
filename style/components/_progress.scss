@@ -20,76 +20,109 @@
     p {
       font-weight: 400;
       margin-bottom: 1rem;
+      @include medium {
+        font-size: 14px;
+        text-align: center;
+      }
     }
     span {
       font-weight: 700;
       color: white;
     }
-    input[type="range"] {
-      appearance: none;
+    .range {
+      background-color: $VeryDarkBlue;
       width: 100%;
-      border-radius: 30px;
-      border: none;
-      outline: none;
-    }
+      height: 20px;
+      border-radius: 20px;
+      border: 3px solid $VeryDarkBlue;
 
-    input[type="range"]::-moz-range-track,
-    input[type="range"]::-webkit-slider-runnable-track {
-      width: 100%;
-      height: 1.2em;
-      cursor: pointer;
-      border: none;
-      border-radius: 20px;
-      background: $DarkBlue;
-      overflow: hidden;
-      outline: none;
+      .progress {
+        background: linear-gradient(
+          90deg,
+          hsl(6, 100%, 80%),
+          hsl(335, 100%, 65%)
+        );
+        height: 100%;
+        width: 80%;
+        border-radius: 20px;
+        position: relative;
+      }
+      .progress::after {
+        content: "";
+        height: 80%;
+        width: 18px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        right: 2px;
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
     }
-    input[type="range"]::-moz-range-progress {
-      background: linear-gradient(
-        90deg,
-        hsl(6, 100%, 80%),
-        hsl(335, 100%, 65%)
-      );
-      border-radius: 20px;
-      border: none;
-      outline: none;
-      height: 100%;
-      width: 150%;
-    }
-    input[type="range"]::-moz-range-thumb {
-      appearance: none;
-      display: none;
-      border: none;
-      outline: none;
-      height: 100%;
-      background: hsl(335, 100%, 65%);
-    }
-    input[type="range"]::-webkit-slider-runnable-track {
-      height: 1.2em;
-      width: 80%;
-      cursor: pointer;
-      box-shadow: 1px 1px 1px #000000;
-      background: linear-gradient(
-        90deg,
-        hsl(6, 100%, 80%),
-        hsl(335, 100%, 65%)
-      );
-      border-radius: 20px;
-      // border: 1px solid #000000;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-      height: 80%;
-      width: 15px;
-      border-radius: 20px;
-      border: none;
+    // input[type="range"] {
+    //   appearance: none;
+    //   width: 100%;
+    //   border-radius: 30px;
+    //   border: none;
+    //   outline: none;
+    // }
 
-      cursor: pointer;
-      -webkit-appearance: none;
-    }
-    input[type="range"]:focus::-webkit-slider-runnable-track {
-      outline: none;
-      border: none;
-    }
+    // input[type="range"]::-moz-range-track,
+    // input[type="range"]::-webkit-slider-runnable-track {
+    //   width: 100%;
+    //   height: 1.2em;
+    //   cursor: pointer;
+    //   border: none;
+    //   border-radius: 20px;
+    //   background: $VeryDarkBlue;
+    //   overflow: hidden;
+    //   outline: none;
+    // }
+    // input[type="range"]::-moz-range-progress {
+    //   background: linear-gradient(
+    //     90deg,
+    //     hsl(6, 100%, 80%),
+    //     hsl(335, 100%, 65%)
+    //   );
+    //   border-radius: 20px;
+    //   border: none;
+    //   outline: none;
+    //   height: 100%;
+    //   width: 150%;
+    // }
+    // input[type="range"]::-moz-range-thumb {
+    //   appearance: none;
+    //   display: none;
+    //   border: none;
+    //   outline: none;
+    //   height: 100%;
+    //   background: hsl(335, 100%, 65%);
+    // }
+    // input[type="range"]::-webkit-slider-runnable-track {
+    //   height: 1.2em;
+    //   width: 80%;
+    //   cursor: pointer;
+    //   background: linear-gradient(
+    //     90deg,
+    //     hsl(6, 100%, 80%),
+    //     hsl(335, 100%, 65%)
+    //   );
+    //   border-radius: 20px;
+    //   // border: 1px solid #000000;
+    // }
+    // input[type="range"]::-webkit-slider-thumb {
+    //   height: 80%;
+    //   width: 15px;
+    //   border-radius: 20px;
+    //   border: none;
+
+    //   cursor: pointer;
+    //   -webkit-appearance: none;
+    // }
+    // input[type="range"]:focus::-webkit-slider-runnable-track {
+    //   outline: none;
+    //   border: none;
+    // }
     .perc {
       display: flex;
       justify-content: space-between;
